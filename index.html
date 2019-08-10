@@ -18,30 +18,30 @@
                 method="POST"
                 action="https://mighty-tor-46402.herokuapp.com/v1/task/createTask"
                 data-task-add-form
-        >
-            <fieldset class="datatable__row-section datatable__row-section--input-section">
-                <label class="datatable__input-label">
-                    Task name
-                </label>
-                <input type="text" name="title" placeholder="Insert a task name" required minlength="3">
-            </fieldset>
+    >
+      <fieldset class="datatable__row-section datatable__row-section--input-section">
+        <label class="datatable__input-label">
+          Task name
+        </label>
+        <input type="text" name="title" placeholder="Insert a task name" required minlength="3">
+      </fieldset>
 
-            <fieldset class="datatable__row-section datatable__row-section--input-section">
-                <label class="datatable__input-label">
-                    Task content
-                </label>
-                <textarea name="content" placeholder="Insert task content" required minlength="3"></textarea>
-            </fieldset>
+      <fieldset class="datatable__row-section datatable__row-section--input-section">
+        <label class="datatable__input-label">
+          Task content
+        </label>
+        <textarea name="content" placeholder="Insert task content" required minlength="3"></textarea>
+      </fieldset>
 
-            <fieldset class="datatable__row-section datatable__row-section--button-section">
-                <button type="submit" data-task-add-button class="datatable__button">Add a task</button>
-            </fieldset>
-        </form>
-    </section>
-    <section class="datatable">
-        <h2>Tasks from the API</h2>
-        <div class="datatable__tasks-container" data-tasks-container></div>
-    </section>
+      <fieldset class="datatable__row-section datatable__row-section--button-section">
+        <button type="submit" data-task-add-button class="datatable__button">Add a task</button>
+      </fieldset>
+    </form>
+  </section>
+  <section class="datatable">
+    <h2>Tasks from the API</h2>
+    <div class="datatable__tasks-container" data-tasks-container></div>
+  </section>
 </main>
 
 <div class="template" data-datatable-row-template>
@@ -85,7 +85,8 @@
   </form>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="jquery-3.4.1.min.js"></script>
 <script src="script.js"></script>
+
 </body>
 </html>
