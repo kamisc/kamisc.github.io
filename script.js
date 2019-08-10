@@ -1,6 +1,6 @@
 $(document).ready(function() {
-  const apiRoot = 'https://mighty-tor-46402.herokuapp.com/v1/task/';
-  const trelloApiRoot = 'https://mighty-tor-46402.herokuapp.com/v1/trello/';
+  const apiRoot = 'https://mighty-tor-46402.com/v1/task/';
+  const trelloApiRoot = 'https://mighty-tor-46402.com/v1/trello/';
   const datatableRowTemplate = $('[data-datatable-row-template]').children()[0];
   const $tasksContainer = $('[data-tasks-container]');
 
