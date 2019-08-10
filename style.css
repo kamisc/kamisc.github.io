@@ -90,7 +90,7 @@ body {
 .datatable__row--editing .datatable__button {
   display: none; }
 
-.datatable__row--editing .datatable__button--editing
+.datatable__row--editing .datatable__button--editing,
 .datatable__row--editing .datatable__button--card-creation {
   display: block; }
 
@@ -108,7 +108,7 @@ body {
   padding: 10px;
   flex-grow: 1; }
 
-.datatable__row-section--button-section
+.datatable__row-section--button-section,
 .datatable__row-section--trello-section {
   margin-left: auto;
   align-self: center;

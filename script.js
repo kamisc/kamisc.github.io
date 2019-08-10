@@ -1,7 +1,7 @@
 $(document).ready(function() {
   const apiRoot = 'https://mighty-tor-46402.herokuapp.com/v1/task/';
   const trelloApiRoot = 'https://mighty-tor-46402.herokuapp.com/v1/trello/';
-  const datatableRowTemplate = $('[data-datatable-row-template]').children()[0]; 
+  const datatableRowTemplate = $('[data-datatable-row-template]').children()[0];
   const $tasksContainer = $('[data-tasks-container]');
 
   var availableBoards = {};
@@ -11,19 +11,19 @@ $(document).ready(function() {
 
   getAllTasks();
 
-  function getAllAvailableBoards(callback, calbackArgs) {
+  function getAllAvailableBoards(callback, callbackArgs) {
     var requestUrl = trelloApiRoot + 'getTrelloBoards';
 
     $.ajax({
       url: requestUrl,
       method: 'GET',
       contentType: 'application/json',
-      success: function(boards) { callback(calbackArgs, boards); }
+      success: function(boards) { callback(callbackArgs, boards); }
     });
   }
 
   function createElement(data) {
-    var element = $(datatableRowTemplate).clone();
+    const element = $(datatableRowTemplate).clone();
 
     element.attr('data-task-id', data.id);
     element.find('[data-task-name-section] [data-task-name-paragraph]').text(data.title);
@@ -47,7 +47,7 @@ $(document).ready(function() {
   function handleDatatableRender(taskData, boards) {
     $tasksContainer.empty();
     boards.forEach(board => {
-      availableBoards[boards.id] = board;
+      availableBoards[board.id] = board;
     });
 
     taskData.forEach(function(task) {
@@ -80,7 +80,7 @@ $(document).ready(function() {
   }
 
   function handleTaskUpdateRequest() {
-    var parentEl = $(this).parent().parent();
+    var parentEl = $(this).parents('[data-task-id]');
     var taskId = parentEl.attr('data-task-id');
     var taskTitle = parentEl.find('[data-task-name-input]').val();
     var taskContent = parentEl.find('[data-task-content-input]').val();
@@ -174,8 +174,8 @@ $(document).ready(function() {
     var relatedTask = availableTasks[relatedTaskId];
     var selectedListId = $relatedTaskRow.find('[data-list-name-select]').val();
 
-    if(!selectedListId) {
-      alert('You have to select a board and a list first!')
+    if (!selectedListId) {
+      alert('You have to select a board and a list first!');
       return;
     }
 
